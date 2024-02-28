@@ -7,3 +7,19 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+	background-color: cadetblue;
+}
+nav {
+	background-color: pink;
+}
+main {
+	background-color: lightblue;
+}
+h1 {
+	font-family: var(--heading-font);
+}
+#reviews {
+	padding: 10px;
+}
