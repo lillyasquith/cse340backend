@@ -1,0 +1,9 @@
+:root {
+	/*Fonts*/
+	--heading-font: 'Inter', sans-serif;
+	--paragrap-font: 'PT Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
