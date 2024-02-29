@@ -66,11 +66,14 @@ section {
 /* .car-container {
 } */
 .car-text {
-	color: rgb(0, 225, 255);
+	color: rgb(14, 148, 201);
 	position: absolute;
+	background-color: beige;
+	
 }
 .delorean-img {
 	width: 100%;
+	padding: 10px;
 }
 #purchase-btn {
 	width: 100px;
