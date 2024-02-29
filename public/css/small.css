@@ -7,19 +7,97 @@
     margin: 0;
     padding: 0;
 }
-
+/* Header */
 header {
-	background-color: cadetblue;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+	padding: 20px;
 }
-nav {
-	background-color: pink;
+
+.siteName {
+	font-family: var(--heading-font);
+	font-size: 2rem;
+	color: black;
 }
-main {
-	background-color: lightblue;
+.siteName a, #tools a{
+	text-decoration: none;
+	color: black;
+}
+#tools {
+	font-family: var(--paragrap-font);
+	font-size: 1rem;
+}
+
+/* Navigation */
+
+nav ul{
+	text-align: center;
+	display: flex;
+	background-color: black;
+	
+}
+
+nav ul li{
+    list-style-type: none;
+    width: 100%;
+	padding: 1rem 1vw;
+	color: aliceblue;
+	font-family: var(--heading-font);
+	border: none;
+}
+
+
+main{
+	padding: 10px;
 }
 h1 {
 	font-family: var(--heading-font);
+	font-size: 1.2rem;
+	padding-bottom: 10px;
 }
-#reviews {
+section {
+	padding: 10px;
+}
+/* #welcome {
+
+} */
+/* .car-container {
+} */
+.car-text {
+	color: rgb(0, 225, 255);
+	position: absolute;
+}
+.delorean-img {
+	width: 100%;
+}
+#purchase-btn {
+	width: 100px;
+	box-shadow: 10px 10px 10px grey;
+}
+#reviews ul li {
+	padding: 5px;
+	margin-left: 20px;
+}
+/* #upgrades {
+	
+} */
+.container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1em;
+	align-items: center;
+}
+.item {
+	text-align: center;
+}
+.item-img {
+	align-items: stretch;
+	padding: 10px 40px;
+	background-color: skyblue;
+	border: 1px solid black;
+}
+footer {
 	padding: 10px;
 }
