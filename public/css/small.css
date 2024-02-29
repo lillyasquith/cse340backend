@@ -48,28 +48,25 @@ nav ul li{
 	border: none;
 }
 
-
-main{
-	padding: 10px;
-}
+/* main */
 h1 {
 	font-family: var(--heading-font);
 	font-size: 1.2rem;
-	padding-bottom: 10px;
+	padding: 10px 0 10px 0;
+
 }
 section {
 	padding: 10px;
 }
-/* #welcome {
 
-} */
 /* .car-container {
+	padding: 5px;
 } */
 .car-text {
 	color: rgb(14, 148, 201);
 	position: absolute;
-	background-color: beige;
-	
+	background-color: #dce6f591;
+	padding: 10px;
 }
 .delorean-img {
 	width: 100%;
@@ -77,7 +74,7 @@ section {
 }
 #purchase-btn {
 	width: 100px;
-	box-shadow: 10px 10px 10px grey;
+	box-shadow: 1px 1px 10px grey;
 }
 #reviews ul li {
 	padding: 5px;
@@ -89,14 +86,14 @@ section {
 .container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 1em;
 	align-items: center;
 }
 .item {
 	text-align: center;
 }
 .item-img {
-	align-items: stretch;
+	height: 70px;
+    width: 70px;
 	padding: 10px 40px;
 	background-color: skyblue;
 	border: 1px solid black;
