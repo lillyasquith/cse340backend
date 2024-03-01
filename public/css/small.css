@@ -7,6 +7,9 @@
     margin: 0;
     padding: 0;
 }
+#big-screen-image {
+	display: none;
+}
 /* Header */
 header {
 	display: flex;
@@ -35,8 +38,7 @@ header {
 nav ul{
 	text-align: center;
 	display: flex;
-	background-color: black;
-	
+	background-color: black;	
 }
 
 nav ul li{
@@ -67,6 +69,7 @@ section {
 	position: absolute;
 	background-color: #dce6f591;
 	padding: 10px;
+	margin-top: 20px;
 }
 .delorean-img {
 	width: 100%;
@@ -75,6 +78,7 @@ section {
 #purchase-btn {
 	width: 100px;
 	box-shadow: 1px 1px 10px grey;
+	margin-top: 20px;
 }
 #reviews ul li {
 	padding: 5px;
@@ -83,14 +87,14 @@ section {
 /* #upgrades {
 	
 } */
-.container {
+.container-item {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 }
 .item {
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .item-img {
 	height: 70px;
@@ -101,4 +105,5 @@ section {
 }
 footer {
 	padding: 10px;
+	margin-bottom: 10px;
 }
