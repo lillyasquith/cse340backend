@@ -7,6 +7,9 @@
     margin: 0;
     padding: 0;
 }
+#wrapper {
+	padding: 10px;
+}
 #big-screen-image {
 	display: none;
 }
@@ -65,11 +68,9 @@ section {
 	padding: 5px;
 } */
 .car-text {
-	color: rgb(14, 148, 201);
+	background-color: rgb(123 198 228 / 38%);
 	position: absolute;
-	background-color: #dce6f591;
-	padding: 10px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .delorean-img {
 	width: 100%;
