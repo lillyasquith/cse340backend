@@ -24,7 +24,7 @@ header {
 
 .siteName {
 	font-family: var(--heading-font);
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: black;
 }
 .siteName a, #tools a{
