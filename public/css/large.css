@@ -11,7 +11,7 @@
         font-size: 2rem;
     }
     .delorean-img {
-        width: 80%;
+        width: 85%;
     }
     main {
         display: grid;
@@ -38,17 +38,23 @@
     }
     h1 {
         font-size: 3rem;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
-
+    .car-text {
+        padding: 20px;
+    }
     #purchase-btn {
-        margin-top: 20px;
-        width: 300px;
+        margin-top: 30px;
+        width: 100%;
     }
     #reviews ul li {
         margin-left: 20px;
     }
- 
+    .item-img {
+        height: 90px;
+        width: 90px;
+        padding: 20px 70px;
+    }
     body {
         background-image: url("/images/site/small_check.jpg");
         font-size: 2rem;
@@ -61,6 +67,5 @@
         top:20px;
         left: 30px;
         right: 50px;
-        padding: 10px;
     }
 }
