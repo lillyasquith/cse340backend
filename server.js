@@ -35,6 +35,8 @@ app.use(static)
 // })
 // Index route//Alter the "Index Route" using the entire M-V-C approach
 app.get("/", baseController.buildHome)
+// Inventory routes
+app.use("/inv", inventoryRoute)
 
 /* ***********************
  * Local Server Information
