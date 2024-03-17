@@ -10,13 +10,16 @@
         padding: 20px;
         font-size: 2rem;
     }
+    nav ul li {
+        margin: 10px;
+    }
     .delorean-img {
         width: 85%;
     }
-    main {
+    #home-page {
         display: grid;
-        grid-template-columns: repeat(2, 3fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
         gap: 10px;
     }
 
@@ -39,6 +42,7 @@
     h1 {
         font-size: 3rem;
         margin-bottom: 30px;
+        grid-row: 1/2;
     }
     .car-text {
         padding: 20px;
@@ -68,4 +72,21 @@
         left: 30px;
         right: 50px;
     }
+
+    #error-title {
+        font-size: 3rem;
+        margin-left: 20px;
+    }
+
+    #error-text {
+        margin-left: 20px;
+        grid-column: 1/2;
+        grid-row: 2/3;  
+    }
+    #class-container {
+        display: flex;
+    
+    }
+  
+
 }
