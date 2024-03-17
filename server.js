@@ -12,7 +12,7 @@ const app = express();
 const static = require("./routes/static");
 const baseController = require("./controllers/baseController");
 const inventoryRoute = require("./routes/inventoryRoute");
-const utilities = require("./utilities");
+const utilities = require("./utilities/");
 
 /* ***********************
  * View Engine and Templates
@@ -61,8 +61,8 @@ app.use(async (err, req, res, next) => {
   } else {message = 'Oh no! There was a crash. Maybe try a different route?'}
   res.render("errors/error", {
     title: err.status || 'Server Error',
-    message: err.message,
-    nav,
+    message,
+    nav
   })
 });
 
