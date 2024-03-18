@@ -83,10 +83,39 @@
         grid-column: 1/2;
         grid-row: 2/3;  
     }
+
     #class-container {
-        display: flex;
-    
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 5fr 5fr;
     }
+
+    #class-title {
+        font-size: 3rem;
+    }
+    #class-grid {
+        grid-column: 1/3;
+        grid-row: 2/4;  
+        
+    }
+    #inv-display li {
+        width: 400px;
+        height: 500px;
+        grid-column: 1/3;
+        grid-row: 2/3;
+        display: inline-block;
+    }
+
+    #inv-display li img{
+        width: 100%;
+    }
+    #inv-display a{
+        font-family: var(--paragrap-font);
+        font-size: 2rem;
+    }
+   
+
   
 
 }
