@@ -86,29 +86,27 @@
 
     #class-container {
         font-size: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 5fr 5fr;
     }
 
     #class-title {
         font-size: 3rem;
+        text-align: left;
+        padding-left: 30px;
     }
     #class-grid {
-        grid-column: 1/3;
-        grid-row: 2/4;  
-        
+        display: flex;
+      
     }
     #inv-display li {
-        width: 400px;
-        height: 500px;
-        grid-column: 1/3;
-        grid-row: 2/3;
+        width: 350px;
+        height: 400px;
         display: inline-block;
+        margin: 50px;
     }
 
     #inv-display li img{
-        width: 100%;
+        width: 300px;
+        height: 200px;
     }
     #inv-display a{
         font-family: var(--paragrap-font);
