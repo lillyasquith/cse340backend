@@ -116,8 +116,7 @@ section {
 	border: 1px solid black;
 }
 footer {
-	padding: 10px;
-	margin-bottom: 10px;
+	padding: 20px;
 }
 
 
@@ -170,4 +169,28 @@ footer {
 
 #inv-display li img{
 	border-radius: 10px;
+}
+#item-container{
+	font-family: var(--paragrap-font);
+	font-size: 1rem;
+	padding: 10px;
+}
+#item-display li{
+	list-style-type: none;
+}
+
+.this-title {
+	padding-bottom: 10px;
+}
+
+.price, .color {
+	padding: 10px;
+	background-color: rgb(245, 243, 243);
+}
+.description, .miles {
+	padding: 10px;
+}
+
+#error-link{
+	padding: 10px;
 }

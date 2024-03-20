@@ -71,21 +71,23 @@ Util.buildItemGrid = async function(data){
   let vehicle = data
   let grid
   if(itemAmount.length === 1){
-    grid = '<ul id="inv-display">'
+    grid = '<ul id="item-display">'
       grid += '<li>'
-      grid +=
-      '<a href="../../inv/detail/' + vehicle.inv_id +
-      '" title="View ' + vehicle.inv_make + '' + vehicle.inv_model +
-      'details"><img src="' + vehicle.inv_thumbnail +
-      '" alt="Image of ' + vehicle.inv_make + '' +
-      vehicle.inv_model +' on CSE Motors" /></a>';
-      grid += '<p class="this-title">' + (vehicle.inv_make + ' ' + vehicle.inv_model) + ' ' +'Details</p>'
-      grid += '<div class="namePrice">'
+      grid += '<div class= "imageBox">'
+        grid +=
+        '<a  href="../../inv/detail/' + vehicle.inv_id +
+        '" title="View ' + vehicle.inv_make + '' + vehicle.inv_model +
+        'details"><img src="' + vehicle.inv_thumbnail +
+        '" alt="Image of ' + vehicle.inv_make + '' +
+        vehicle.inv_model +' on CSE Motors" /></a>';
+      grid += '</div>'
+      grid += '<div class="item-details">'
+      grid += '<h3 class="this-title">' + (vehicle.inv_make + ' ' + vehicle.inv_model) + ' ' +'Details</h3>'
       grid += 
-      '<span>$Price:' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
-      grid += '<p class="description">Description:'+ (vehicle.inv_description) + '</p>'
-      grid += '<p class="color">Color:'+ (vehicle.inv_color) + '</p>'
-      grid += '<p class="color">Miles:'+ (vehicle.inv_miles) + '</p>'
+      '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</h4>'
+      grid += '<p class="description"><strong>Description:</strong> '+ (vehicle.inv_description) + '</p>'
+      grid += '<p class="color" ><strong>Color:</strong> '+ (vehicle.inv_color) + '</p>'
+      grid += '<p class="miles"><strong>Miles:</strong> '+ (vehicle.inv_miles) + '</p>'
       grid += '</div>'
       grid += '</li>'
     grid += '</ul>'
