@@ -67,7 +67,6 @@ Util.buildItemGrid = async function(data){
   let grid
   if(itemAmount.length === 1){
     grid = '<ul id="inv-display">'
-    data.forEach(vehicle => { 
       grid += '<li>'
       grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
@@ -75,7 +74,6 @@ Util.buildItemGrid = async function(data){
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
       +' on CSE Motors" /></a>'
       grid += '<div class="namePrice">'
-      grid += '<hr />'
       grid += '<h2>'
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
@@ -83,9 +81,13 @@ Util.buildItemGrid = async function(data){
       grid += '</h2>'
       grid += '<span>$' 
       + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
+      grid += '<h3>'
+      grid += '<a href="../../inv/detail/' + vehicle.inv_description +'" title="View ' 
+      + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
+      + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
+      grid += '</h3>'
       grid += '</div>'
       grid += '</li>'
-    })
     grid += '</ul>'
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
