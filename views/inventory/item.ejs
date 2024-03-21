@@ -1,6 +1,6 @@
 <!-- The Content Heading -->
-<div id="item-container"><% if (title) { %>
-    <h1 id="item-title"><%= title %></h1>
+<div><% if (title) { %>
+    <h1><%= title %></h1>
     <% } else {
           res.redirect('/')
     } %>
@@ -9,5 +9,5 @@
     <%# messages() %>
     
     <!-- The Inventory Items Display -->
-    <div id="item-grid"><%- grid %></div>
+    <div><%- grid %></div>
 </div>

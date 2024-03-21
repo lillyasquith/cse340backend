@@ -84,19 +84,6 @@
         grid-row: 2/3;  
     }
 
-    #class-container {
-        font-size: 2rem;
-    }
-
-    #class-title {
-        font-size: 3rem;
-        text-align: left;
-        padding-left: 30px;
-    }
-    #class-grid {
-        display: flex;
-      
-    }
     #inv-display li {
         width: 350px;
         height: 400px;

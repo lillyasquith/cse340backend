@@ -132,23 +132,12 @@ footer {
 	color: rgb(235, 4, 4);
 }
 
-#class-container {
-	font-family: var(--paragrap-font);
-	font-size: 1rem;
-}
-#class-title {
-	font-family: var(--heading-font);
-	font-size: 1.5rem;
-	text-align: center;
-}
-#class-grid {
-	text-align: center;
-}
 #inv-display li {
 	list-style-type: none;
 	border: 1px solid grey;
 	/* box-shadow: 1px 1px 10px grey; */
 	margin: 30px;
+	text-align: center;
 }
 
 #inv-display a{
@@ -165,18 +154,11 @@ footer {
 }
 #inv-display li {
 	border-radius: 10px;
+	list-style-type: none;
 }
 
 #inv-display li img{
 	border-radius: 10px;
-}
-#item-container{
-	font-family: var(--paragrap-font);
-	font-size: 1rem;
-	padding: 10px;
-}
-#item-display li{
-	list-style-type: none;
 }
 
 .this-title {
