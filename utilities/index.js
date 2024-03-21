@@ -71,8 +71,7 @@ Util.buildItemGrid = async function(data){
   let vehicle = data
   let grid
   if(itemAmount.length === 1){
-    grid = '<ul id="item-display">'
-      grid += '<li>'
+    grid = '<ul id="single-item-display">'
       grid += '<div class= "imageBox">'
         grid +=
         '<a  href="../../inv/detail/' + vehicle.inv_id +
@@ -81,7 +80,8 @@ Util.buildItemGrid = async function(data){
         '" alt="Image of ' + vehicle.inv_make + '' +
         vehicle.inv_model +' on CSE Motors" /></a>';
       grid += '</div>'
-      grid += '<div class="item-details">'
+      grid += '<li>'
+      grid += '<div class="single-item-details">'
       grid += '<h3 class="this-title">' + (vehicle.inv_make + ' ' + vehicle.inv_model) + ' ' +'Details</h3>'
       grid += 
       '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</h4>'

@@ -149,18 +149,22 @@ footer {
 	margin-bottom: 10px;
 }
 .namePrice hr {
-	padding: 1px;
+	padding: 3px;
 	background-color: black;
 }
 #inv-display li {
-	border-radius: 10px;
+	border-radius: 20px;
 	list-style-type: none;
+	padding: 10px;
 }
 
 #inv-display li img{
-	border-radius: 10px;
+	border-radius: 20px;
 }
-
+#inv-display li {
+	width: auto;
+	height: auto;
+}
 .this-title {
 	padding-bottom: 10px;
 }
@@ -175,4 +179,12 @@ footer {
 
 #error-link{
 	padding: 10px;
+}
+
+#single {
+	padding: 10px;
+}
+
+#single-item-display li {
+	list-style-type: none;
 }
