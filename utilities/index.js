@@ -97,7 +97,9 @@ Util.buildItemGrid = async function(data){
   return grid
 }
 
+// Util.buildLogin = async function (req, res, next){
 
+// }
 
 /* ****************************************
  * Middleware For Handling Errors

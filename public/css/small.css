@@ -188,3 +188,56 @@ footer {
 #single-item-display li {
 	list-style-type: none;
 }
+
+#login-form {
+	background-color: rgb(148, 176, 194);
+	padding: 10px;
+	color: aliceblue;
+}
+
+.form-container {
+	display: block;
+    font-family: var(--paragrap-font);
+    font-size: 20px;
+    width: 100%;  
+    text-align: center;
+	margin-top: 20px;
+}
+
+form fieldset {
+	text-align: left;
+    border: 1px solid black;
+    border-radius: 10px; 
+    padding: 10px;
+	margin: 20px 10px;
+    background-color: rgb(1, 31, 82);
+
+}
+.form-label {
+	display: block;
+    padding-top: 1rem;
+    color: aliceblue;
+}
+
+.form-label input, form-label select {
+	display: block;
+    border: 1px solid black ;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 15rem;
+    background-color: #edecf8;
+    padding: 10px;
+}
+.submitBtn {
+	padding: 10px 30px;
+    border-radius: 20px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	color: aliceblue;
+	background-color: rgb(3, 19, 61);
+}
+.signUp {
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 10px;
+}

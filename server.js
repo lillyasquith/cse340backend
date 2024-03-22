@@ -16,6 +16,7 @@ const baseController = require("./controllers/baseController");
 const inventoryRoute = require("./routes/inventoryRoute");
 const itemRoute = require("./routes/itemRoute");
 const utilities = require("./utilities/");
+const accountRoute = require("./routes/accountRoute")
 
 /* ***********************
  * Middleware
@@ -50,10 +51,6 @@ app.set("layout", "./layouts/layout"); // not at views root
 /* ***********************
  * Routes
  *************************/
-
-/* ***********************
- * Routes
- *************************/
 app.use(static);
 
 // // Index route
@@ -71,9 +68,12 @@ app.use("/inv", inventoryRoute);
 
 app.use("/inv", itemRoute);
 
+// Login View route
+app.use("/account", accountRoute);
+
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
-  next({status: 404, message: 'Sorry, we appear to have lost that page.'})
+  next({status: 404, message: "Sorry, we appear to have lost that page."})
 })
 
 
