@@ -1,7 +1,16 @@
-<div id="login-form">
+<div id="register-form">
     <form class="form-container" method="get" action="">
+        <p class="required-text">ALL FIELDS ARE REQUIRED</p>
         <fieldset>
-            <label class="form-label" >Email:
+            <label class="form-label">First Name:
+                <input type="text" name="account_fname" required>
+            </label>
+
+            <label class="form-label">Last Name:
+                <input type="text" name="account_lname" required>
+            </label>
+
+            <label class="form-label">Email:
                 <input type="email" id="email" name="account_email" required>
             </label>
 
@@ -12,9 +21,7 @@
                 characters and include 1 capital letter,
                 1 number and 1 special character.</p>
         </fieldset>
-        <button class="submitBtn" type="submit" onclick="solve()">LOGIN</button>
+        <button class="submitBtn" type="submit" onclick="solve()">Register</button>
     </form>
     <p class="signUp">No account? <a href="/account/register">Sign-up</a></p>
 </div>
-
-<!-- <%- messages() %> -->

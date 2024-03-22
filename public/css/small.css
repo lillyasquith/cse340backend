@@ -116,6 +116,7 @@ section {
 	border: 1px solid black;
 }
 footer {
+	margin-top: 50px;
 	padding: 20px;
 }
 
@@ -189,13 +190,14 @@ footer {
 	list-style-type: none;
 }
 
-#login-form {
-	background-color: rgb(148, 176, 194);
+#login-form, #register-form{
+	background-color: rgb(154, 193, 218);
 	padding: 10px;
 	color: aliceblue;
+	margin-top: 10px;
 }
 
-.form-container {
+.form-container{
 	display: block;
     font-family: var(--paragrap-font);
     font-size: 20px;
@@ -240,4 +242,17 @@ form fieldset {
 	text-align: center;
 	font-size: 1.5rem;
 	padding: 10px;
+}
+.p-text {
+	margin-top: 20px;
+	font-size: 1rem;
+	font-style: italic;
+	color: aliceblue;
+}
+.required-text {
+	font-style: italic;
+	color: rgb(3, 19, 61);
+}
+.signUp {
+	color: rgb(3, 19, 61);
 }
