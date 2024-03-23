@@ -24,23 +24,19 @@ invCont.buildByClassificationId = async function (req, res, next) {
 /* ***************************
  *  Build inventory by item view
  * ************************** */
+
 invCont.buildByItemId = async function (req, res, next) {
-  const classification_id = req.params.classificationId
-  const itemId = req.params.itemId*1 //to interger
-  const data = await invModel.getInventoryByClassificationId(classification_id)
-  const findObjectbyItemId = (arr, invId) =>{
-      return arr.find (obj => obj.inv_id === invId);
-  };
-  const foundItem = findObjectbyItemId(data, itemId);
-  console.log(foundItem)
-  const grid = await utilities.buildItemGrid(foundItem)
+  const itemId = req.params.itemId
+  const data = await invModel.getInventoryByItemId(itemId)
+  const grid = await utilities.buildItemGrid(data)
   let nav = await utilities.getNav()
-  const itemName = `${foundItem.inv_year} ${foundItem.inv_make} ${foundItem.inv_model}`
+  const itemName = `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`
   res.render("./inventory/item", {
     title: itemName,
     nav,
     grid,
   })
 };
+
 
 module.exports = invCont;

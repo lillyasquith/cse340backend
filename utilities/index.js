@@ -35,8 +35,7 @@ Util.buildClassificationGrid = async function(data){
     data.forEach((vehicle) => { 
       grid += '<li>'
       grid +=  
-      '<a href="/' + vehicle.classification_id 
-      + '/detail/' + vehicle.inv_id
+      '<a href="../../inv/detail/' + vehicle.inv_id
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
       + 'details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
@@ -46,8 +45,7 @@ Util.buildClassificationGrid = async function(data){
       grid += '<hr />'
       grid += '<h2>'
       grid +=  
-      '<a href="./' + vehicle.classification_id 
-      +'/detail/' + vehicle.inv_id
+      '<a href="../../inv/detail/' + vehicle.inv_id
       +'" title="View ' + vehicle.inv_make + ' ' + vehicle.inv_model 
       + ' details">' + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
       grid += '</h2>'
@@ -73,21 +71,18 @@ Util.buildItemGrid = async function(data){
   if(itemAmount.length === 1){
     grid = '<ul id="single-item-display">'
       grid += '<div class= "imageBox">'
-        grid +=
-        '<a  href="../../inv/detail/' + vehicle.inv_id +
-        '" title="View ' + vehicle.inv_make + '' + vehicle.inv_model +
-        'details"><img src="' + vehicle.inv_thumbnail +
-        '" alt="Image of ' + vehicle.inv_make + '' +
-        vehicle.inv_model +' on CSE Motors" /></a>';
+      grid += '<img src="' + vehicle[0].inv_thumbnail 
+      +'" alt="Image of '+ vehicle[0].inv_make + ' ' + vehicle[0].inv_model 
+      +' on CSE Motors" />'
       grid += '</div>'
       grid += '<li>'
       grid += '<div class="single-item-details">'
-      grid += '<h3 class="this-title">' + (vehicle.inv_make + ' ' + vehicle.inv_model) + ' ' +'Details</h3>'
+      grid += '<h3 class="this-title">' + (vehicle[0].inv_make + ' ' + vehicle[0].inv_model) + ' ' +'Details</h3>'
       grid += 
-      '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</h4>'
-      grid += '<p class="description"><strong>Description:</strong> '+ (vehicle.inv_description) + '</p>'
-      grid += '<p class="color" ><strong>Color:</strong> '+ (vehicle.inv_color) + '</p>'
-      grid += '<p class="miles"><strong>Miles:</strong> '+ (vehicle.inv_miles) + '</p>'
+      '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle[0].inv_price) + '</h4>'
+      grid += '<p class="description"><strong>Description:</strong> '+ (vehicle[0].inv_description) + '</p>'
+      grid += '<p class="color" ><strong>Color:</strong> '+ (vehicle[0].inv_color) + '</p>'
+      grid += '<p class="miles"><strong>Miles:</strong> '+ (vehicle[0].inv_miles) + '</p>'
       grid += '</div>'
       grid += '</li>'
     grid += '</ul>'
