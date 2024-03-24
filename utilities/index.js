@@ -83,7 +83,7 @@ Util.buildItemGrid = async function(data){
       '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle[0].inv_price) + '</h4>'
       grid += '<p class="description"><strong>Description:</strong> '+ (vehicle[0].inv_description) + '</p>'
       grid += '<p class="color" ><strong>Color:</strong> '+ (vehicle[0].inv_color) + '</p>'
-      grid += '<p class="miles"><strong>Miles:</strong> '+ (vehicle[0].inv_miles) + '</p>'
+      grid += '<p class="miles"><strong>Miles:</strong> '+ new Intl.NumberFormat('en-US').format(vehicle[0].inv_miles) + '</p>'
       grid += '</div>'
       grid += '</li>'
     grid += '</ul>'
