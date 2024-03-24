@@ -80,7 +80,7 @@ Util.buildItemGrid = async function(data){
       grid += '<div class="single-item-details">'
       grid += '<h3 class="this-title">' + (vehicle[0].inv_make + ' ' + vehicle[0].inv_model) + ' ' +'Details</h3>'
       grid += 
-      '<h4 class="price"><strong>$Price:</strong> ' + new Intl.NumberFormat('en-US').format(vehicle[0].inv_price) + '</h4>'
+      '<h4 class="price"><strong>Price:</strong> $' + new Intl.NumberFormat('en-US').format(vehicle[0].inv_price) + '</h4>'
       grid += '<p class="description"><strong>Description:</strong> '+ (vehicle[0].inv_description) + '</p>'
       grid += '<p class="color" ><strong>Color:</strong> '+ (vehicle[0].inv_color) + '</p>'
       grid += '<p class="miles"><strong>Miles:</strong> '+ new Intl.NumberFormat('en-US').format(vehicle[0].inv_miles) + '</p>'
