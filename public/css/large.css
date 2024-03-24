@@ -109,8 +109,6 @@
     .imageBox{
         grid-column: 1/2;
         justify-content: center;
-    }
-    .imageBox img {
         width: 450px;
         height: auto; 
     }

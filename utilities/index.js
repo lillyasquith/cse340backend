@@ -70,11 +70,12 @@ Util.buildItemGrid = async function(data){
   let grid
   if(itemAmount.length === 1){
     grid = '<ul id="single-item-display">'
-      grid += '<div class= "imageBox">'
-      grid += '<img src="' + vehicle[0].inv_thumbnail 
+      grid += '<li>'
+      grid += '<img class="imageBox" src="' + vehicle[0].inv_thumbnail 
       +'" alt="Image of '+ vehicle[0].inv_make + ' ' + vehicle[0].inv_model 
       +' on CSE Motors" />'
-      grid += '</div>'
+      grid += '</li>'
+      
       grid += '<li>'
       grid += '<div class="single-item-details">'
       grid += '<h3 class="this-title">' + (vehicle[0].inv_make + ' ' + vehicle[0].inv_model) + ' ' +'Details</h3>'
