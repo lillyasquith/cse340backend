@@ -7,7 +7,7 @@ const accountModel = require("../models/account-model");
 async function buildLogin(req, res, next) {
     let nav = await utilities.getNav()
     res.render("account/login", {
-      title: "Login",
+      title: "Log In",
       nav,
     })
 };
@@ -30,7 +30,7 @@ async function buildRegister(req, res, next) {
 async function registerAccount(req, res) {
     let nav = await utilities.getNav()
     const { account_firstname, account_lastname, account_email, account_password } = req.body
-  
+
     const regResult = await accountModel.registerAccount(
       account_firstname,
       account_lastname,
@@ -52,6 +52,7 @@ async function registerAccount(req, res) {
       res.status(501).render("account/register", {
         title: "Registration",
         nav,
+        errors: null,
       })
     }
 };
