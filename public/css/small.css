@@ -260,3 +260,9 @@ form fieldset {
 .signUp {
 	color: rgb(3, 19, 61);
 }
+.notice {
+	color: red;
+	padding: 10px;
+	margin: 10px;
+	/* list-style-type: none; */
+}

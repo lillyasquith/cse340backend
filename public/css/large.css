@@ -115,5 +115,44 @@
     .single-item-details {
         grid-column: 2/3;
     }
-   
+    
+    .form-container{
+        font-size: 3rem;
+        max-width:  80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #login-form h1, #register-form h1 {
+        padding: 30px;
+        font-size: 5rem;
+    }
+    
+    
+    form fieldset {
+        padding: 50px;
+        margin: 30px;
+        background-color: rgb(1, 31, 82);
+    
+    }
+    
+    .form-label {
+        padding-top: 3rem;
+    }
+    
+    .form-label input, form-label select {
+        max-width: 80%;
+        background-color: #edecf8;
+        padding: 20px;
+        font-size: 3rem;
+    }
+    .submitBtn {
+        padding: 30px 50px;
+        font-size: 2.5rem;
+        margin-top: 30px;
+    }
+    .signUp, .p-text{
+        font-size: 2.5rem;
+        padding-top: 2rem;
+    }
+
 }
