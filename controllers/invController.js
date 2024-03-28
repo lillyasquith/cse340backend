@@ -39,4 +39,27 @@ invCont.buildByItemId = async function (req, res, next) {
 };
 
 
+/* ****************************************
+*  Deliver New Classification
+* *************************************** */
+async function AddNewClassifiation(req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-classification", {
+    title: "Add New Classifiation",
+    nav,
+  })
+};
+  
+/* ****************************************
+*  Deliver New Vehicle
+* *************************************** */
+async function AddNewVehicle(req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-inventory", {
+    title: "Add New Vehicle",
+    nav,
+  })
+};
+  
+
 module.exports = invCont;

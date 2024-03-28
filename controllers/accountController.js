@@ -24,7 +24,9 @@ async function buildRegister(req, res, next) {
       errors:null,
     })
 };
-  
+
+
+
 /* ****************************************
 *  Process Registration
 * *************************************** */
