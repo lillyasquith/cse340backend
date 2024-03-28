@@ -14,6 +14,10 @@ router.get("/detail/:itemId", utilities.handleErrors(invController.buildByItemId
 router.get("/", utilities.handleErrors(invController.BuildManagementPage));
 
 // Route to add classification
-router.get("/add-classification", utilities.handleErrors(invController.AddNewClassifiation));
+router.get("/add-classification", utilities.handleErrors(invController.BuilNewClassifiation));
+
+// Route to add a new vehicle
+router.get("/add-inventory", utilities.handleErrors(invController.BuildNewVehicle));
+
 
 module.exports = router;

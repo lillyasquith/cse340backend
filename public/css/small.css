@@ -189,12 +189,12 @@ footer {
 #single-item-display li {
 	list-style-type: none;
 }
-#login-form h1, #register-form h1 {
+#login-form h1, #register-form h1, #classification-form h1 {
 	text-align: center;
 	color: rgb(3, 19, 61);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-#login-form, #register-form{
+#login-form, #register-form, #classification-form{
 	background-color: rgb(154, 193, 218);
 	padding: 10px;
 	color: aliceblue;
@@ -265,4 +265,16 @@ form fieldset {
 	padding: 10px;
 	margin: 10px;
 	/* list-style-type: none; */
+}
+#management-inv, #management-account {
+	padding: 10px;
+	font-family: var(--paragrap-font);
+}
+#management-inv ul li{
+	list-style-type: none;
+	padding: 10px;
+}
+
+#management-account h1, #management-account p, #management-account h2, #management-account a {
+	padding: 10px;
 }

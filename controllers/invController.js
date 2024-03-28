@@ -38,13 +38,23 @@ invCont.buildByItemId = async function (req, res, next) {
   })
 };
 
+/* ****************************************
+*  Deliver Vehicle Management View
+* *************************************** */
+invCont.BuildManagementPage = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/vehicle-management", {
+    title: "Vehicle Management",
+    nav,
+  })
+};
 
 /* ****************************************
 *  Deliver New Classification
 * *************************************** */
-async function AddNewClassifiation(req, res, next) {
+invCont.BuilNewClassifiation = async function (req, res, next) {
   let nav = await utilities.getNav()
-  res.render("inventory/add-classification", {
+  res.render("./inventory/add-classification", {
     title: "Add New Classifiation",
     nav,
   })
@@ -53,9 +63,9 @@ async function AddNewClassifiation(req, res, next) {
 /* ****************************************
 *  Deliver New Vehicle
 * *************************************** */
-async function AddNewVehicle(req, res, next) {
+invCont.BuildNewVehicle = async function (req, res, next) {
   let nav = await utilities.getNav()
-  res.render("inventory/add-inventory", {
+  res.render("./inventory/add-inventory", {
     title: "Add New Vehicle",
     nav,
   })

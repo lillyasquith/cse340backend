@@ -1,0 +1,67 @@
+<% if (errors) { %>
+<ul class="notice">
+<% errors.array().forEach(error=> { %>
+<li><%= error.msg %></li>
+<% }) %>
+</ul> 
+<% } %>
+    
+<%- messages() %>
+    
+<div id="inventory-form">
+  <h1><%- title %></h1>
+  <form class="form-container" action="/inventory/add-inventory" method="post">
+    <p class="required-text">ALL FIELDS ARE REQUIRED</p>
+    <fieldset>
+      <label class="form-label" for="classificationName">Classifiation:
+      <select id="classificationName" name="classification_name">
+        <option value="">✔ Choose a Classification</option>
+        <option value="">Custom</option>
+        <option value="">newcar</option>
+        <option value="">Sedan</option>
+        <option value="">Sport</option>
+        <option value="">SUV</option>
+        <option value="">Truck</option>
+      </select>
+      </label>
+
+      <label class="form-label" for="make">Make: 
+      <input type="text" id="make" name="inv_make" placeholder="Min of 3 characters" value="<%= locals.inv_make %>"  />
+      </label>
+
+      <label class="form-label" for="model">Model: 
+      <input type="text" id="model" name="inv_mode" placeholder="Min of 3 characters" value="<%= locals.inv_mode %>" />
+      </label>
+
+      <label class="form-label" for="description">Description: 
+      <textarea id="description" name="inv_description"></textarea>
+      </label>
+
+      <label class="form-label" for="">Image Path: 
+      <input type="text" id="" name="inv_image" value="/images/vehicles/no-image.png" required/>
+      </label>
+
+      <label class="form-label" for="">Thumbnail Path:
+      <input type="text" id="" name="inv_thumbnail" value="/images/vehicles/no-image.png" required/> 
+      </label>
+
+      <label class="form-label" for="">Price: 
+      <input type="text" id="" name="inv_price" placeholder="decimal or interger" required/>
+      </label>
+
+      <label class="form-label" for="">Year: 
+      <input type="text" maxlength="4" id="" name="inv_year" placeholder="4-digits only" pattern="\d{4}" required />
+      </label>
+
+      <label class="form-label" for="">Miles: 
+      <input type="text" id="" name="inv_miles" placeholder="digits only" required/>
+      </label>
+
+      <label class="form-label" for="">Color: 
+      <input type="text" id="" name="inv_color" required/>
+      </label>
+    </fieldset>
+    <button class="submitBtn" type="submit">Add Vehicle</button>
+  </form>
+  <p class="signUp">No account? <a href="/account/register">Sign-up</a></p>
+</div>
