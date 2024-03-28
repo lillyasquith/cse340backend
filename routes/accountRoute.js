@@ -10,12 +10,19 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 //Deliver Registration View
 router.get("/register", utilities.handleErrors(accountController.buildRegister))
 
-// Process the registration data
+// Process registration
 router.post(
   "/register", 
   regValidate.registrationRules(), 
   regValidate.checkRegData, 
   utilities.handleErrors(accountController.registerAccount)
+)
+// Process Login
+router.post(
+  "/login", 
+  regValidate.loginRules(), 
+  regValidate.checkRegData, 
+  utilities.handleErrors(accountController.accountLogin)
 )
 
 // Process the login attempt
