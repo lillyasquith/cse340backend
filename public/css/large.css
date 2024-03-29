@@ -109,22 +109,24 @@
     .imageBox{
         grid-column: 1/2;
         justify-content: center;
+        height: auto;
         width: 450px;
-        height: auto; 
     }
     .single-item-details {
         grid-column: 2/3;
     }
-    
+    #login-form, #register-form, #classification-form, #inventory-form {
+        margin: 150px ;
+    }
     .form-container{
-        font-size: 3rem;
+        font-size: 2.5rem;
         max-width:  80%;
         margin-left: auto;
         margin-right: auto;
     }
     #login-form h1, #register-form h1, #classification-form h1, #inventory-form h1 {
         padding: 30px;
-        font-size: 5rem;
+        font-size: 3.5rem;
     }
     
     

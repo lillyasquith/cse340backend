@@ -57,31 +57,28 @@ validate.registrationRules = () => {
 
 validate.loginRules = () => {
   return [
-    body("account_email")
-      .trim()
-      .escape()
-      .notEmpty()
-      .isEmail()
-      .normalizeEmail()
-      .withMessage("A valid email is required.")
-      .custom(async (account_email) => {
-        const user = await accountModel.getAccountByEmail(account_email);
-        if (!user) {
-          throw new Error('Invalid email or password');
-        }
-      }),
-
-    // password is required
-    body("account_password")
-      .trim()
-      .notEmpty()
-      .withMessage("Password is required.")
-      .custom(async (account_password, { req }) => {
-        const user = await accountModel.getAccountByEmail(req.body.account_email);
-        if (!user || !(await accountModel.accountLogin(user, account_password))) {
-          throw new Error('Invalid email or password');
-      }
-    })
+  // valid email is required and cannot already exist in the DB
+  body("account_email")
+  .trim()
+  .escape()
+  .notEmpty()
+  .isEmail()
+  .normalizeEmail() // refer to validator.js docs
+  .withMessage("A valid email is required."),
+  
+  // password is required and must be strong password
+  body("account_password")
+  .trim()
+  .notEmpty()
+  .isStrongPassword({
+    minLength: 12,
+    minLowercase: 1,
+    minUppercase: 1,
+    minNumbers: 1,
+    minSymbols: 1,
+  })
+  .withMessage("Password does not meet requirements."),
+  
   ];
 };
 
