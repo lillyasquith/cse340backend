@@ -1,3 +1,5 @@
+
+
 <div id="management-inv">
   <h1><%- title %></h1>
   <ul>
@@ -5,3 +7,13 @@
     <li><a href="/inv/add-inventory">Add New Vehicle</a></li>
   </ul>
 </div>
+
+<h2>Manage Inventory</h2>
+<p>Choose a classification to see those inventory items.</p>
+<%- classificationSelect %>
+
+<table id="inventoryDisplay"></table>
+
+<noscript>JavaScript must be enable this page.</noscript>
+
+<script src="../../js/inventory.js"></script>

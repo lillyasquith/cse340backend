@@ -19,5 +19,7 @@ router.get("/add-classification", utilities.handleErrors(invController.BuilNewCl
 // Route to add a new vehicle
 router.get("/add-inventory", utilities.handleErrors(invController.BuildNewVehicle));
 
+//Get inventory for AJAX Route
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
 module.exports = router;
