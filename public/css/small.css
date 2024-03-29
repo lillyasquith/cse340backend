@@ -189,16 +189,17 @@ footer {
 #single-item-display li {
 	list-style-type: none;
 }
-#login-form h1, #register-form h1, #classification-form h1 {
+#login-form h1, #register-form h1, #classification-form h1, #inventory-form h1 {
 	text-align: center;
 	color: rgb(3, 19, 61);
-    font-size: 1.5rem;
+	font-size: 2rem;
 }
-#login-form, #register-form, #classification-form{
+#login-form, #register-form, #classification-form, #inventory-form{
 	background-color: rgb(154, 193, 218);
 	padding: 10px;
 	color: aliceblue;
 	margin-top: 10px;
+	font-size: 1.5rem;
 }
 
 .form-container{
@@ -225,14 +226,29 @@ form fieldset {
     color: aliceblue;
 }
 
-.form-label input, form-label select {
+.form-label input, .form-label select {
 	display: block;
     border: 1px solid black ;
     border-radius: 5px;
     width: 100%;
     max-width: 15rem;
-    background-color: #edecf8;
     padding: 10px;
+	font-size: 1rem;
+}
+#classificationName {
+	padding: 10px;
+	font-size: 1rem;
+	max-width: 16.2rem;
+}
+#description{
+    display: block;
+    border: 1px solid black ;
+    border-radius: 5px;
+    width: 100%;
+	height: 6rem;
+    max-width: 15rem;
+    padding: 10px;
+	font-size: 1rem;
 }
 .submitBtn {
 	padding: 10px 30px;

@@ -1,11 +1,3 @@
-<% if (errors) { %>
-<ul class="notice">
-<% errors.array().forEach(error=> { %>
-<li><%= error.msg %></li>
-<% }) %>
-</ul> 
-<% } %>
-    
 <%- messages() %>
     
 <div id="inventory-form">
@@ -34,31 +26,31 @@
       </label>
 
       <label class="form-label" for="description">Description: 
-      <textarea id="description" name="inv_description"></textarea>
+      <textarea type="text" id="description" name="inv_description"></textarea>
       </label>
 
-      <label class="form-label" for="">Image Path: 
-      <input type="text" id="" name="inv_image" value="/images/vehicles/no-image.png" required/>
+      <label class="form-label" for="img-path">Image Path: 
+      <input type="text" id="img-path" name="inv_image" value="/images/vehicles/no-image.png" required/>
       </label>
 
-      <label class="form-label" for="">Thumbnail Path:
-      <input type="text" id="" name="inv_thumbnail" value="/images/vehicles/no-image.png" required/> 
+      <label class="form-label" for="thumbnail-path">Thumbnail Path:
+      <input type="text" id="thumbnail-path" name="inv_thumbnail" value="/images/vehicles/no-image.png" required/> 
       </label>
 
-      <label class="form-label" for="">Price: 
-      <input type="text" id="" name="inv_price" placeholder="decimal or interger" required/>
+      <label class="form-label" for="price">Price: 
+      <input type="text" id="price" name="inv_price" placeholder="decimal or interger" required/>
       </label>
 
-      <label class="form-label" for="">Year: 
-      <input type="text" maxlength="4" id="" name="inv_year" placeholder="4-digits only" pattern="\d{4}" required />
+      <label class="form-label" for="year">Year: 
+      <input type="text" maxlength="4" id="year" name="inv_year" placeholder="4-digits only" pattern="\d{4}" required />
       </label>
 
-      <label class="form-label" for="">Miles: 
-      <input type="text" id="" name="inv_miles" placeholder="digits only" required/>
+      <label class="form-label" for="miles">Miles: 
+      <input type="text" id="miles" name="inv_miles" placeholder="digits only" required/>
       </label>
 
-      <label class="form-label" for="">Color: 
-      <input type="text" id="" name="inv_color" required/>
+      <label class="form-label" for="color">Color: 
+      <input type="text" id="color" name="inv_color" required/>
       </label>
     </fieldset>
     <button class="submitBtn" type="submit">Add Vehicle</button>

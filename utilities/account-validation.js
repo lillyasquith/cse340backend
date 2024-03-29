@@ -65,7 +65,7 @@ validate.loginRules = () => {
       .normalizeEmail()
       .withMessage("A valid email is required.")
       .custom(async (account_email) => {
-        const user = await accountModel.checkExistingEmail(account_email);
+        const user = await accountModel.getAccountByEmail(account_email);
         if (!user) {
           throw new Error('Invalid email or password');
         }
@@ -77,8 +77,8 @@ validate.loginRules = () => {
       .notEmpty()
       .withMessage("Password is required.")
       .custom(async (account_password, { req }) => {
-        const user = await userModel.checkExistingEmail(req.body.account_email);
-        if (!user || !(await userModel.getAccountByEmail(user, account_password))) {
+        const user = await accountModel.getAccountByEmail(req.body.account_email);
+        if (!user || !(await accountModel.accountLogin(user, account_password))) {
           throw new Error('Invalid email or password');
       }
     })
