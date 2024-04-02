@@ -119,14 +119,14 @@
         margin: 150px ;
     }
     .form-container{
-        font-size: 2.5rem;
+        font-size: 2rem;
         max-width:  80%;
         margin-left: auto;
         margin-right: auto;
     }
     #login-form h1, #register-form h1, #classification-form h1, #inventory-form h1 {
         padding: 30px;
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     
     
@@ -145,25 +145,25 @@
         max-width: 80%;
         background-color: #edecf8;
         padding: 20px;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .submitBtn {
         padding: 30px 50px;
-        font-size: 2.5rem;
-        margin-top: 30px;
+        font-size: 2rem;
+        margin: 30px 30px;
     }
     .signUp, .p-text{
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding-top: 2rem;
     }
-    #classificationName {
+    #classificationList {
+        font-size: 2rem;
+        max-width: 87%;
         padding: 20px;
-        font-size: 2.5rem;
-        max-width: 85%;
     }
     #description {
         padding: 20px;
-        font-size: 2.5rem;
+        font-size: 2rem;
         max-width: 80%;
         height: 10rem;
     }

@@ -287,15 +287,29 @@ form fieldset {
 	margin: 10px;
 	/* list-style-type: none; */
 }
-#management-inv, #management-account {
+#management-inv, #management-account, #management-add {
 	padding: 10px;
 	font-family: var(--paragrap-font);
 }
-#management-inv ul li{
+#management-add ul li{
 	list-style-type: none;
 	padding: 10px;
 }
-
+#management-inv p {
+	padding: 10px;
+}
 #management-account h1, #management-account p, #management-account h2, #management-account a {
 	padding: 10px;
+}
+.modify-delete {
+	padding: 10px;
+}
+
+#classificationList {
+	font-size: 1rem;
+	padding: 10px;
+}
+#inventoryDisplay, th, td {
+	padding: 10px;
+	border: 1px solid rgba(39, 34, 34, 0.748);
 }

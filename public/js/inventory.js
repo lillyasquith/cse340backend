@@ -1,7 +1,7 @@
 'use strict' 
 // The eventListener
  // Get a list of items in inventory based on the classification_id 
- let classificationList = document.querySelector("#classification-form")
+ let classificationList = document.querySelector("#classificationList")
  classificationList.addEventListener("change", function () { 
   let classification_id = classificationList.value 
   console.log(`classification_id is: ${classification_id}`) 

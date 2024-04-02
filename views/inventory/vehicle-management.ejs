@@ -1,6 +1,5 @@
 
-
-<div id="management-inv">
+<div id="management-add">
   <h1><%- title %></h1>
   <ul>
     <li><a href="/inv/add-classification">Add New Classification</a></li>
@@ -8,9 +7,11 @@
   </ul>
 </div>
 
-<h2>Manage Inventory</h2>
-<p>Choose a classification to see those inventory items.</p>
-<%- classificationSelect %>
+<div id="management-inv">
+  <h2>Manage Inventory</h2>
+  <p>Choose a classification to see those inventory items.</p>
+  <%- classificationSelect %>
+</div>  
 
 <table id="inventoryDisplay"></table>
 
