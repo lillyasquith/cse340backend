@@ -47,8 +47,9 @@ async function getInventoryByItemId(itemId) {
 async function registerNewClassification(classification_name){
   try{
     const sql = "INSERT INTO public.inventory (classification_name) VALUES ($1) RETURNING *"
-    return await pool.query(sql, [classification_name])
+    const data = await pool.query(sql, [classification_name])
 
+    return data.rows
   } catch(error) {
   return error.message
   }

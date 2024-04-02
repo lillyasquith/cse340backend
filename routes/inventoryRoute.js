@@ -26,7 +26,7 @@ router.get("/getInventory/:classification_id", utilities.handleErrors(invControl
 // Process classification - post data
 router.post("/add-classification", 
 invValidate.classificationRules(), 
-invValidate.checkInvData, 
+invValidate.checkClassificationData, 
 utilities.handleErrors(invController.registerNewClassification))
 
 // Process add new vehicle inventory

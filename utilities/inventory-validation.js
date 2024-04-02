@@ -1,8 +1,25 @@
 const utilities = require(".")
-const { body, validationInvResult } = require("express-validator")
+const { body, validationResult } = require("express-validator")
 const validate = {}
 
 // const invModel = require("../models/inventory-model");
+validate.checkClassificationData = async (req, res, next) => {
+  const { classification_name } = req.body
+  let errors = []
+  errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    let nav = await utilities.getNav()
+    res.render("./inventory/add-classification", {
+      errors,
+      title: "Add Classification",
+      nav,
+      classification_name
+    })
+    return
+  }
+  next()
+}
+
 
 /*  **********************************
   *  Registration Data Validation Rules
@@ -121,7 +138,7 @@ validate.checkInvData = async (req, res, next) => {
     inv_miles, 
     inv_color } = req.body
   let errors = []
-  errors = validationInvResult(req)
+  errors = validationResult(req)
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav()
     res.render("./inventory/vehicle-management", {

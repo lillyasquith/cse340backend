@@ -93,13 +93,13 @@ invCont.registerNewVehicle = async (req, res) => {
       "notice",
       `The ${inv_make} ${inv_model} was successfully added.`
     )
-    res.status(201).render("inventory/vehicle-management", {
+    res.status(201).render("./inventory/vehicle-management", {
       title: "",
       nav,
     })
   } else {
     req.flash("notice", "Sorry, the registration failed.")
-    res.status(501).render("account/register", {
+    res.status(501).render("./inventory/vehicle-management", {
       title: "Vehicle Management",
       nav,
       errors: null,
@@ -120,15 +120,14 @@ invCont.registerNewClassification = async (req, res) =>{
       "notice",
       `The ${classification_name} classification was sucessfully added.`
     )
-    res.status(201).render("inventory/vehicle-management", {
+    res.status(201).render("/inventory/vehicle-management", {
       title: "Vehicle Management",
       nav,
+      errors: null,
     })
-    // ? how to add new classification_name to getNav
-    return utilities.getNav()
   } else {
     req.flash("notice", "Sorry, the adding classification failed.")
-    res.status(501).render("inventory/add-classification", {
+    res.status(501).render("/inventory/add-classification", {
       title: "Classification",
       nav,
       errors: null,
