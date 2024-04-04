@@ -8,7 +8,7 @@
     <p class="required-text">The new classification name cannot contain a space or special character of any kind</p>
     <fieldset>
       <label class="form-label" for="classification">Classification Name:
-        <input type="text" id="classification" name="classification_name" required value="<%= locals.classification_name %>" >
+        <input type="text" id="classification" name="classification_name" required pattern="^[a-zA-Z]{1,9}$" value="<%= locals.classification_name %>" >
       </label>
     </fieldset>
     <button class="submitBtn" type="submit">Add Classification</button>
