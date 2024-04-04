@@ -21,8 +21,8 @@ router.get("/add-classification", utilities.handleErrors(invController.BuilNewCl
 
 // Process classification
 router.post("/add-classification", 
-// invValidate.classificationRules(), 
-// invValidate.checkClassificationData, 
+invValidate.classificationRules(), 
+invValidate.checkInvData,
 utilities.handleErrors(invController.registerNewClassification))
 
 
@@ -31,8 +31,8 @@ router.get("/add-inventory", utilities.handleErrors(invController.BuildNewVehicl
 
 // Process add new vehicle inventory
 router.post("/add-inventory", 
-invValidate.vehicleRules(), 
-invValidate.checkInvData, 
+// invValidate.vehicleRules(), 
+// invValidate.checkInvData, 
 utilities.handleErrors(invController.registerNewVehicle))
 
 // Route to edit

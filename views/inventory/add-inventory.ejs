@@ -18,11 +18,11 @@
       </label>
 
       <label class="form-label" for="make">Make: 
-      <input type="text" id="make" name="inv_make" placeholder="Min of 3 characters" value="<%= locals.inv_make %>" required>
+      <input type="text" id="make" name="inv_make" placeholder="Min of 3 characters" minlength="3" value="<%= locals.inv_make %>" required>
       </label>
 
       <label class="form-label" for="model">Model: 
-      <input type="text" id="model" name="inv_mode" placeholder="Min of 3 characters" value="<%= locals.inv_mode %>" required/>
+      <input type="text" id="model" name="inv_mode" placeholder="Min of 3 characters" minlength="3" value="<%= locals.inv_mode %>" required/>
       </label>
 
       <label class="form-label" for="description">Description: 
@@ -30,11 +30,10 @@
       </label>
 
       <label class="form-label" for="img-path">Image Path: 
-      <input type="text" id="img-path" name="inv_image" placeholder="/images/vehicles/no-image.png" value="<%= locals.inv_image %>" required/>
-      </label>
+      <input type="text" id="img-path" name="inv_image" value="/images/vehicles/no-image.png" required/>
 
       <label class="form-label" for="thumbnail-path">Thumbnail Path:
-      <input type="text" id="thumbnail-path" name="inv_thumbnail" placeholder="/images/vehicles/no-image-tn.png" value="<%= locals.inv_thumbnail %>" required/> 
+      <input type="text" id="thumbnail-path" name="inv_thumbnail" value="/images/vehicles/no-image-tn.png" required/> 
       </label>
 
       <label class="form-label" for="price">Price: 

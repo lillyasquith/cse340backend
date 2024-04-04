@@ -63,6 +63,39 @@ invCont.BuilNewClassifiation = async function (req, res, next) {
     errors: null,
   })
 };
+
+/* ****************************************
+*  Process new new classification
+* *************************************** */
+invCont.registerNewClassification = async (req, res) =>{
+  let nav = await utilities.getNav()
+  const classificationSelect = await utilities.buildClassificationList()
+  const {classification_name} = req.body
+  
+  const regResult = await invModel.registerNewClassification(classification_name)
+  if (regResult) {
+    req.flash(
+      "notice",
+      `The ${classification_name} classification was sucessfully added.`
+    )
+    res.status(201).render("./inventory/vehicle-management", {
+      title: "Vehicle Management",
+      nav,
+      classificationSelect,
+      errors: null,
+    })
+  } else {
+    req.flash("notice", "Sorry, the adding classification failed.")
+    res.status(501).render("./inventory/add-classification", {
+      title: "Classification",
+      nav,
+      classificationSelect,
+      errors: null,
+    })
+  }
+}
+
+
   
 /* ****************************************
 *  Deliver New Vehicle
@@ -79,13 +112,12 @@ invCont.BuildNewVehicle = async function (req, res, next) {
 };
 
 
-
-
 /* ****************************************
 *  Process new vehicle Inventory
 * *************************************** */
 invCont.registerNewVehicle = async (req, res) => {
   let nav = await utilities.getNav()
+  const classificationSelect = await utilities.buildClassificationList()
   const {classification_name, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
 
   const regResult = await invModel.registerNewVehicle(
@@ -99,45 +131,20 @@ invCont.registerNewVehicle = async (req, res) => {
     res.status(201).render("./inventory/vehicle-management", {
       title: "",
       nav,
+      classificationSelect, 
+      errors: null
     })
   } else {
     req.flash("notice", "Sorry, the registration failed.")
     res.status(501).render("./inventory/vehicle-management", {
       title: "Vehicle Management",
       nav,
+      classificationSelect,
       errors: null,
     })
   }
 }
-/* ****************************************
-*  Process new new classification
-* *************************************** */
-invCont.registerNewClassification = async (req, res) =>{
-  let nav = await utilities.getNav()
-  const {classification_name} = req.body
-  
-  const regResult = await invModel.registerNewClassification(
-    classification_name
-  )
-  if (regResult) {
-    req.flash(
-      "notice",
-      `The ${classification_name} classification was sucessfully added.`
-    )
-    res.status(201).render("./inventory/vehicle-management", {
-      title: "Vehicle Management",
-      nav,
-      errors: null,
-    })
-  } else {
-    req.flash("notice", "Sorry, the adding classification failed.")
-    res.status(501).render("./inventory/add-classification", {
-      title: "Classification",
-      nav,
-      errors: null,
-    })
-  }
-}
+
   
 /* ***************************
  *  Return Inventory by Classification As JSON
