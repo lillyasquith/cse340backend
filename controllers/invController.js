@@ -117,11 +117,14 @@ invCont.BuildNewVehicle = async function (req, res, next) {
 * *************************************** */
 invCont.registerNewVehicle = async (req, res) => {
   let nav = await utilities.getNav()
-  const classificationSelect = await utilities.buildClassificationList()
-  const {classification_name, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
+  const itemId = req.params.itemId
+  const data = await invModel.getInventoryByItemId(itemId)
+  const classificationSelect = await utilities.buildClassificationList(data.classification_id)
+  // const classificationSelect = await utilities.buildClassificationList()
+  const {classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
 
   const regResult = await invModel.registerNewVehicle(
-    classification_name, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color
+    classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color
   )
   if (regResult) {
     req.flash(
