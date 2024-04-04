@@ -46,7 +46,7 @@ async function getInventoryByItemId(itemId) {
 * *************************** */
 async function registerNewClassification(classification_name){
   try{
-    const sql = "INSERT INTO public.inventory (classification_name) VALUES ($1) RETURNING *"
+    const sql = "INSERT INTO public.classification (classification_name) VALUES ($1) RETURNING *"
     const data = await pool.query(sql, [classification_name])
 
     return data.rows
@@ -70,9 +70,9 @@ async function registerNewVehicle(classification_name, inv_make, inv_model, inv_
 }
 
 /* ***************************
- *  Update Inventory Data
+ *  Update Edit Inventory Data
  * ************************** */
-async function UpdateInventory(
+async function UpdateEditInventory(
   inv_id,
   inv_make,
   inv_model,
@@ -107,4 +107,33 @@ async function UpdateInventory(
   }
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId,getInventoryByItemId, registerNewClassification, registerNewVehicle, UpdateInventory};
+
+/* ***************************
+ *  Update Delete Inventory Data
+ * ************************** */
+async function UpdateDeleteInventory(
+  inv_id,
+  inv_make,
+  inv_model,
+  inv_price,
+  inv_year,
+  classification_id
+) {
+  try {
+    const sql =
+      "DELETE FROM public.inventory WHERE inv_id = $1"
+    const data = await pool.query(sql, [
+      inv_make,
+      inv_model,
+      inv_price,
+      inv_year,
+      classification_id,
+      inv_id
+    ])
+    return data.rows[0]
+  } catch (error) {
+    console.error("model error: " + error)
+  }
+}
+
+module.exports = {getClassifications, getInventoryByClassificationId,getInventoryByItemId, registerNewClassification, registerNewVehicle, UpdateEditInventory, UpdateDeleteInventory};

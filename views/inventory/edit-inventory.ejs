@@ -1,3 +1,9 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+  <% } else {
+        res.redirect('/')
+  } %>
+  
 <%- messages() %>
 
 <% if (errors) { %>
@@ -9,8 +15,7 @@
   <% } %>
     
 <div id="inventory-form">
-  <h1><%- title %></h1>
-  <form id="updateForm" class="form-container" action="/inventory/edit-inventory" method="post">
+  <form id="updateForm" class="form-container" action="/inv/edit-inventory" method="post">
     <p class="required-text">ALL FIELDS ARE REQUIRED</p>
     <fieldset>
       <label class="form-label">Classification:
@@ -53,15 +58,15 @@
       <input type="text" id="color" name="inv_color" value="<%= locals.inv_color %>" required/>
       </label>
     </fieldset>
-    <button class="submitBtn" type="submit">Update Vehicle</button>
+    <button class="submitBtn" type="submit" disable>Update Vehicle</button>
     
-    <input type="hidden" name="inv_id"
-    <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
-    <% } %>>
-
+    <input type="hidden" name="inv_id">
+    <% if(locals.inv_id) {
+      %> value="<%= locals.inv_id %>" <%
+    } %> 
   </form>
   
 </div>
 
-
+<script src="../../js/inv-update.js"></script>
 

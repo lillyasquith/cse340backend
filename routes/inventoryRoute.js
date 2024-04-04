@@ -13,14 +13,16 @@ router.get("/detail/:itemId", utilities.handleErrors(invController.buildByItemId
 
 // Route to add managament view
 router.get("/", utilities.handleErrors(invController.BuildManagementPage));
+//Get inventory for AJAX Route
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
 // Route to add classification view
 router.get("/add-classification", utilities.handleErrors(invController.BuilNewClassifiation));
 
 // Process classification
 router.post("/add-classification", 
-invValidate.classificationRules(), 
-invValidate.checkClassificationData, 
+// invValidate.classificationRules(), 
+// invValidate.checkClassificationData, 
 utilities.handleErrors(invController.registerNewClassification))
 
 
@@ -33,13 +35,16 @@ invValidate.vehicleRules(),
 invValidate.checkInvData, 
 utilities.handleErrors(invController.registerNewVehicle))
 
-
 // Route to edit
-router.get("/edit/:itemId", utilities.handleErrors(invController.BuildEditInventory));
+router.get("/edit/:inv_id", utilities.handleErrors(invController.BuildEditInventory));
 //Process edit to update
-router.post("/edit-inventory", utilities.handleErrors(invController.UpdateInventory))
+router.post("/edit-inventory", utilities.handleErrors(invController.UpdateEditInventory))
 
-//Get inventory for AJAX Route
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+// Route to delete
+router.get("/delete/:inv_id", utilities.handleErrors(invController.BuildDeleteInventory));
+//Process detele to update
+router.post("/delete-inventory", utilities.handleErrors(invController.UpdateDeleteInventory))
+
+
 
 module.exports = router;
