@@ -119,7 +119,7 @@ invCont.registerNewVehicle = async (req, res) => {
   let nav = await utilities.getNav()
   const itemId = req.params.itemId
   const data = await invModel.getInventoryByItemId(itemId)
-  const classificationSelect = await utilities.buildClassificationList(data.classification_id)
+  const classificationSelect = await utilities.buildClassificationList(data.itemId)
   // const classificationSelect = await utilities.buildClassificationList()
   const {classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
 
@@ -135,7 +135,7 @@ invCont.registerNewVehicle = async (req, res) => {
       title: "",
       nav,
       classificationSelect, 
-      errors: null
+      errors: null,
     })
   } else {
     req.flash("notice", "Sorry, the registration failed.")
@@ -168,7 +168,6 @@ invCont.getInventoryJSON = async (req, res, next) => {
 invCont.BuildEditInventory = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
   let nav = await utilities.getNav()
-  // const itemData = await invModel.getInventoryByItemId(inv_id)
   const data = await invModel.getInventoryByItemId(inv_id)
   const itemData = data[0]
   const classificationSelect = await utilities.buildClassificationList(itemData.classification_id)
@@ -258,9 +257,8 @@ invCont.UpdateEditInventory = async function (req, res, next) {
 invCont.BuildDeleteInventory = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
   let nav = await utilities.getNav()
-  // const data = await invModel.getInventoryByItemId(inv_id)
-  // const itemData = data[0]
-  const itemData = await invModel.getInventoryByItemId(inv_id)
+  const data = await invModel.getInventoryByItemId(inv_id)
+  const itemData = data[0]
   const classificationSelect = await utilities.buildClassificationList(itemData.classification_id)
   const itemName = `${itemData.inv_make} ${itemData.inv_model}`
   res.render("./inventory/delete-inventory", {
@@ -300,7 +298,7 @@ invCont.UpdateDeleteInventory = async function (req, res, next) {
   )
 
   if (deleteResult) {
-    const itemName = updateResult.inv_make + " " + updateResult.inv_model
+    const itemName = deleteResult.inv_make + " " + deleteResult.inv_model
     req.flash("notice", `The ${itemName} was successfully updated.`)
     res.redirect("/inv/")
   } else {
@@ -316,12 +314,7 @@ invCont.UpdateDeleteInventory = async function (req, res, next) {
     inv_make,
     inv_model,
     inv_year,
-    inv_description,
-    inv_image,
-    inv_thumbnail,
     inv_price,
-    inv_miles,
-    inv_color,
     classification_id
     })
   }
