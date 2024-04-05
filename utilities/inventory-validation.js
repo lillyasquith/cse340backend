@@ -128,6 +128,7 @@ validate.vehicleRules = () => {
 validate.checkInvData = async (req, res, next) => {
   const { 
     classification_name, 
+    inv_id,
     inv_make, 
     inv_model, 
     inv_year, 
@@ -146,6 +147,7 @@ validate.checkInvData = async (req, res, next) => {
       title: "Vehicle Management",
       nav,
       classification_name, 
+      inv_id,
       inv_make, 
       inv_model, 
       inv_year, 

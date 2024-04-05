@@ -31,8 +31,8 @@ router.get("/add-inventory", utilities.handleErrors(invController.BuildNewVehicl
 
 // Process add new vehicle inventory
 router.post("/add-inventory", 
-// invValidate.vehicleRules(), 
-// invValidate.checkInvData, 
+invValidate.vehicleRules(), 
+invValidate.checkInvData, 
 utilities.handleErrors(invController.registerNewVehicle))
 
 // Route to edit

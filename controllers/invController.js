@@ -136,6 +136,7 @@ invCont.registerNewVehicle = async (req, res) => {
       nav,
       classificationSelect, 
       errors: null,
+    
     })
   } else {
     req.flash("notice", "Sorry, the registration failed.")
