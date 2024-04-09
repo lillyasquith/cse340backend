@@ -22,34 +22,34 @@
       </label>
 
       <label class="form-label" for="model">Model: 
-      <input type="text" id="model" name="inv_model" placeholder="Min of 3 characters" minlength="3" value="<%= locals.inv_mode %>" required/>
+      <input type="text" id="model" name="inv_model" placeholder="Min of 3 characters" minlength="3" value="<%= locals.inv_model %>" required>
       </label>
 
       <label class="form-label" for="description">Description: 
-      <textarea type="text" id="description" name="inv_description" value="<%= locals.inv_description %>" required></textarea>
+      <textarea id="description" name="inv_description" required><%= locals.inv_description %></textarea>
       </label>
 
       <label class="form-label" for="img-path">Image Path: 
-      <input type="text" id="img-path" name="inv_image" value="/images/vehicles/no-image.png" required/>
+      <input type="text" id="img-path" name="inv_image" value="/images/vehicles/no-image.png" required>
 
       <label class="form-label" for="thumbnail-path">Thumbnail Path:
-      <input type="text" id="thumbnail-path" name="inv_thumbnail" value="/images/vehicles/no-image-tn.png" required/> 
+      <input type="text" id="thumbnail-path" name="inv_thumbnail" value="/images/vehicles/no-image-tn.png" required> 
       </label>
 
       <label class="form-label" for="price">Price: 
-      <input type="text" id="price" name="inv_price" placeholder="decimal or interger" step="0.01" value="<%= locals.inv_price %>" required/>
+      <input type="text" id="price" name="inv_price" placeholder="decimal or interger" step="0.01" value="<%= locals.inv_price %>" required>
       </label>
 
       <label class="form-label" for="year">Year: 
-      <input type="text" maxlength="4" id="year" name="inv_year" placeholder="4-digits only" pattern="\d{4}" value="<%= locals.inv_year %>" required />
+      <input type="text" maxlength="4" id="year" name="inv_year" placeholder="4-digits only" pattern="\d{4}" value="<%= locals.inv_year %>" required>
       </label>
 
       <label class="form-label" for="miles">Miles: 
-      <input type="text" id="miles" name="inv_miles" placeholder="digits only" value="<%= locals.inv_miles %>" required/>
+      <input type="text" id="miles" name="inv_miles" placeholder="digits only" value="<%= locals.inv_miles %>" required>
       </label>
 
       <label class="form-label" for="color">Color: 
-      <input type="text" id="color" name="inv_color" value="<%= locals.inv_color %>" required/>
+      <input type="text" id="color" name="inv_color" value="<%= locals.inv_color %>" required>
       </label>
     </fieldset>
     <button class="submitBtn" type="submit">Add Vehicle</button>
