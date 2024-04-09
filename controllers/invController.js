@@ -299,8 +299,8 @@ invCont.UpdateDeleteInventory = async function (req, res, next) {
   )
 
   if (deleteResult) {
-    const itemName = deleteResult.inv_make + " " + deleteResult.inv_model
-    req.flash("notice", `The ${itemName} was successfully updated.`)
+    const itemName = inv_make + " " + inv_model
+    req.flash("notice", `The ${itemName} was successfully deleted.`)
     res.redirect("/inv/")
   } else {
     const classificationSelect = await utilities.buildClassificationList(classification_id)

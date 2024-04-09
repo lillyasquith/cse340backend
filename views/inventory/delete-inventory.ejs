@@ -40,13 +40,17 @@
       </label>
 
     </fieldset>
-    <button class="submitBtn" type="submit">Delete Vehicle</button>
     <p>Confirm Deletion - The delete is permanent</p>
+
+    <button class="submitBtn" type="submit">Delete Vehicle</button>
     
-    <input type="hidden" name="inv_id">
+    
+    <input type="hidden" name="inv_id"
     <% if(locals.inv_id) {
       %> value="<%= locals.inv_id %>" <%
-    } %>
+    } %>>
   </form>
 </div>
+
+<script src="../../js/inv-update.js"></script>
 

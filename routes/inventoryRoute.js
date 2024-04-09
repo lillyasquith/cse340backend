@@ -16,6 +16,7 @@ router.get("/", utilities.handleErrors(invController.BuildManagementPage));
 
 //Get inventory for AJAX Route, select inv item activity
 router.get("/getInventory/:classification_id", 
+// Task 2 Assignment 5
 // utilities.checkAccountType,
 utilities.handleErrors(invController.getInventoryJSON))
 
