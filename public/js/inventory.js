@@ -5,7 +5,7 @@
  classificationList.addEventListener("change", function () { 
   let classification_id = classificationList.value 
   console.log(`classification_id is: ${classification_id}`) 
-  let classIdURL = "/inv/getInventory/"+classification_id 
+  let classIdURL = "/inv/getInventory/" + classification_id 
   fetch(classIdURL) 
   .then(function (response) { 
    if (response.ok) { 
@@ -18,9 +18,10 @@
    buildInventoryList(data); 
   }) 
   .catch(function (error) { 
-   console.log('There was a problem: ', error.message) 
+   console.log("There was a problem: ", error.message) 
+   throw Error("Fetch of JSON data failed."); 
   }) 
-  })
+})
 
 // Build inventory items into HTML table components and inject into DOM 
 function buildInventoryList(data) { 

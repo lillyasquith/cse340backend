@@ -13,8 +13,11 @@ router.get("/detail/:itemId", utilities.handleErrors(invController.buildByItemId
 
 // Route to add managament view
 router.get("/", utilities.handleErrors(invController.BuildManagementPage));
-//Get inventory for AJAX Route
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+//Get inventory for AJAX Route, select inv item activity
+router.get("/getInventory/:classification_id", 
+// utilities.checkAccountType,
+utilities.handleErrors(invController.getInventoryJSON))
 
 // Route to add classification view
 router.get("/add-classification", utilities.handleErrors(invController.BuilNewClassifiation));

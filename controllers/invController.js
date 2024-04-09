@@ -26,8 +26,8 @@ invCont.buildByClassificationId = async function (req, res, next) {
  * ************************** */
 
 invCont.buildByItemId = async function (req, res, next) {
-  const itemId = req.params.itemId
-  const data = await invModel.getInventoryByItemId(itemId)
+  const inv_id = req.params.itemId
+  const data = await invModel.getInventoryByItemId(inv_id)
   const grid = await utilities.buildItemGrid(data)
   let nav = await utilities.getNav()
   const itemName = `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`
@@ -117,9 +117,9 @@ invCont.BuildNewVehicle = async function (req, res, next) {
 * *************************************** */
 invCont.registerNewVehicle = async (req, res) => {
   let nav = await utilities.getNav()
-  const itemId = req.params.itemId
-  const data = await invModel.getInventoryByItemId(itemId)
-  const classificationSelect = await utilities.buildClassificationList(data.itemId)
+  const inv_id= req.params.itemId
+  const data = await invModel.getInventoryByItemId(inv_id)
+  const classificationSelect = await utilities.buildClassificationList(data.inv_id)
   // const classificationSelect = await utilities.buildClassificationList()
   const {classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
 
