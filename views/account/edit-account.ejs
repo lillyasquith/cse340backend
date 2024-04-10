@@ -13,7 +13,7 @@
 <div id="edit-form">
   <h1><%- title %></h1>
   <!-- Account Update Form -->
-  <form class="form-container" action="/account/edit-account" method="post">
+  <form  id="edit-account" class="form-container" action="/account/edit-account" method="post">
     <fieldset>
       <label class="form-label" for="fname">First Name:
         <input type="text" id="fname" name="account_firstname" required value="<%= locals.account_firstname %>">
@@ -36,7 +36,7 @@
  
 
   <!-- Change Password Form -->
-  <form action="/account/edit-account" method="post">
+  <form  id="edit-password" action="/account/" method="post">
     <h2>Update Password</h2>
     <fieldset>
       <p class="p-text">Passwords must be minimum of 12

@@ -11,6 +11,14 @@ router.get("/", utilities.handleErrors(accountController.buildAccountManagement)
 //Deliver Login View
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
+// Process Login
+router.post(
+  "/login", 
+  regValidate.loginRules(), 
+  regValidate.checkRegData, 
+  utilities.handleErrors(accountController.accountLogin)
+)
+
 //Deliver Registration View
 router.get("/register", utilities.handleErrors(accountController.buildRegister))
 
@@ -20,13 +28,6 @@ router.post(
   regValidate.registrationRules(), 
   regValidate.checkRegData, 
   utilities.handleErrors(accountController.registerAccount)
-)
-// Process Login
-router.post(
-  "/login", 
-  regValidate.loginRules(), 
-  regValidate.checkRegData, 
-  utilities.handleErrors(accountController.accountLogin)
 )
 
 // Process the login attempt
@@ -43,5 +44,22 @@ router.post(
     res.status(200).send('login process')
   }
 )
+
+// Route to edit
+router.get("/edit/:account_id", 
+utilities.handleErrors(accountController.BuildEditAccount));
+
+//Process edit to update 1st form
+router.post("/edit-account", 
+regValidate.editRules(), 
+regValidate.checkRegData, 
+utilities.handleErrors(accountController.UpdateEditPassword),
+utilities.handleErrors(accountController.UpdateEditAccount));
+
+// //Process edit to update 2st form
+// router.post("/", 
+// regValidate.editRules(), 
+// regValidate.checkRegData, 
+// utilities.handleErrors(accountController.UpdateEditPasswordAccount));
 
 module.exports = router;
