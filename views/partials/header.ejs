@@ -4,8 +4,14 @@
     <a href="/" title="Return to home page">CSE Motors</a>
   </span>
   <div id="tools">
-    
-  <a title="Click to log in" href="/account/login">MY ACCOUNT</a>
+    <% if (checkLogin) { %>
+      <a title="Click to log in" href="/account/logout">Logout</a>
+      <h2>Welcome <%= locals.accountData.account_firstname %></h2> 
+      <a href="/account/"></a>
+    <% } else %>  {
+      <a title="Click to log in" href="/account/login">MY ACCOUNT</a>
+    }
+ 
 
   </div>
 </header>

@@ -157,6 +157,16 @@ Util.checkLogin = (req, res, next) => {
   }
 }
 
+Util.checkManagement = (req,res, next) => {
+  if (locals.accountData.account_type == "Admin" || locals.accountData.account_type == "Employee") {
+  next()
+
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+}
+
 
 module.exports = Util;
 

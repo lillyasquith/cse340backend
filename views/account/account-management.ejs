@@ -12,7 +12,14 @@
 <div id="management-account">
     <h1><%- title %></h1>
     <!-- How to get ${account_firstname} in the h2 -->
-    <h2>Welcome</h2> 
+    <h2>Welcome </h2> 
     <p>You're logged in.</p>
     <a href="/account/">Edit Account Information</a>
+
+    <% if (locals.accountData.account_type == "Admin" 
+    || locals.accountData.account_type == "Employee") { %>
+        <h2>Welcome <%= locals.accountData.account_firstname %></h2>
+        <h3>Inventory Management</h3>
+        <a href="/inventory/vehicle-management"></a>
+      <% } 
 </div>

@@ -14,40 +14,54 @@ router.get("/detail/:itemId", utilities.handleErrors(invController.buildByItemId
 // Route to add managament view
 router.get("/", utilities.handleErrors(invController.BuildManagementPage));
 
-//Get inventory for AJAX Route, select inv item activity
+//Get inventory for AJAX Route, select inv item activity for classification List
 router.get("/getInventory/:classification_id", 
-// Task 2 Assignment 5
-// utilities.checkAccountType,
+utilities.checkManagement,
 utilities.handleErrors(invController.getInventoryJSON))
 
 // Route to add classification view
-router.get("/add-classification", utilities.handleErrors(invController.BuilNewClassifiation));
+router.get("/add-classification", 
+utilities.checkManagement,
+utilities.handleErrors(invController.BuilNewClassifiation));
 
 // Process classification
 router.post("/add-classification", 
+utilities.checkManagement,
 // invValidate.classificationRules(), 
 // invValidate.checkInvData,
 utilities.handleErrors(invController.registerNewClassification))
 
 
 // Route to add a new vehicle inventory view
-router.get("/add-inventory", utilities.handleErrors(invController.BuildNewVehicle));
+router.get("/add-inventory", 
+utilities.checkManagement,
+utilities.handleErrors(invController.BuildNewVehicle));
 
 // Process add new vehicle inventory
 router.post("/add-inventory", 
 // invValidate.vehicleRules(), 
 // invValidate.checkInvData, 
+utilities.checkManagement,
 utilities.handleErrors(invController.registerNewVehicle))
 
 // Route to edit
-router.get("/edit/:inv_id", utilities.handleErrors(invController.BuildEditInventory));
+router.get("/edit/:inv_id", 
+utilities.checkManagement,
+utilities.handleErrors(invController.BuildEditInventory));
 //Process edit to update
-router.post("/edit-inventory", utilities.handleErrors(invController.UpdateEditInventory))
+router.post("/edit-inventory", 
+utilities.checkManagement,
+utilities.handleErrors(invController.UpdateEditInventory))
 
 // Route to delete
-router.get("/delete/:inv_id", utilities.handleErrors(invController.BuildDeleteInventory));
+router.get("/delete/:inv_id", 
+utilities.checkManagement,
+utilities.handleErrors(invController.BuildDeleteInventory));
+
 //Process detele to update
-router.post("/delete-inventory", utilities.handleErrors(invController.UpdateDeleteInventory))
+router.post("/delete-inventory", 
+utilities.checkManagement,
+utilities.handleErrors(invController.UpdateDeleteInventory))
 
 
 
