@@ -1,38 +1,44 @@
-<% if (errors) { %>
-<ul class="notice">
-    <% errors.array().forEach(error=> { %>
-    <li><%= error.msg %></li>
-    <% }) %>
-</ul> 
-<% } %>
-
 <%- messages() %>
 
+<% if (errors) { %>
+  <ul class="notice">
+  <% errors.array().forEach(error=> { %>
+    <li>
+      <%= error.msg %>
+    </li>
+  <% }) %>
+  </ul>
+<% } %>
+
 <div id="register-form">
-    <h1><%- title %></h1>
-    <form class="form-container" action="/account/register" method="post">
-        <p class="required-text">ALL FIELDS ARE REQUIRED</p>
-        <fieldset>
-            <label class="form-label" for="fname">First Name:
-            <input type="text" id="fname" name="account_firstname" required value="<%= locals.account_firstname %>">
-            </label>
+  <h1><%- title %></h1>
+  <form class="form-container" action="/account/register" method="post">
+    <p class="required-text">ALL FIELDS ARE REQUIRED</p>
+    <fieldset>
+      <label class="form-label" for="fname">First Name:
+        <input type="text" id="fname" name="account_firstname" required
+        value="<%= locals.account_firstname %>">
+      </label>
 
-            <label class="form-label" for="lname">Last Name: 
-            <input type="text" id="lname" name="account_lastname" required value="<%= locals.account_lastname %>">
-            </label>
+      <label class="form-label" for="lname">Last Name:
+        <input type="text" id="lname" name="account_lastname" required
+        value="<%= locals.account_lastname %>">
+      </label>
 
-            <label class="form-label" for="email">Email Address: 
-                <input type="email" id="email" name="account_email" required value="<%= locals.account_email %>">
-            </label>
+      <label class="form-label" for="email">Email Address:
+          <input type="email" id="email" name="account_email" required
+              value="<%= locals.account_email %>">
+      </label>
 
-            <label class="form-label" for="passwd">Password: 
-                <input type="password" id="passwd" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
-            </label>
-                <p class="p-text">Passwords must be minimum of 12
-                characters and include 1 capital letter,
-                1 number and 1 special character.</p>
-        </fieldset>
-        <button class="submitBtn" type="submit">Register</button>
-    </form>
-    <p class="signUp">No account? <a href="/account/register">Sign-up</a></p>
+      <label class="form-label" for="passwd">Password:
+          <input type="password" id="passwd" name="account_password" required
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+      </label>
+      <p class="i-text">Passwords must be minimum of 12
+        characters and include 1 capital letter,
+        1 number and 1 special character.</p>
+    </fieldset>
+    <button class="submitBtn" type="submit">Register</button>
+  </form>
+  <p class="signUp">No account? <a href="/account/register">Sign-up</a></p>
 </div>

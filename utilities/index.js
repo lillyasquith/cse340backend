@@ -157,6 +157,7 @@ Util.checkLogin = (req, res, next) => {
   }
 }
 
+// middleware that makes use of the JWT token and checks the account type
 Util.checkManagement = (req,res, next) => {
   if (locals.accountData.account_type == "Admin" || locals.accountData.account_type == "Employee") {
   next()

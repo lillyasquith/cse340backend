@@ -13,13 +13,13 @@
     <form class="form-container" action="/account/login" method="post">
         <fieldset>
             <label class="form-label" >Email:
-                <input type="email" id="email" name="account_email" required>
+                <input type="email" id="email" name="account_email" required value="<%= locals.account_email %>">
             </label>
 
             <label class="form-label">Password:
                 <input type="password" id="password" name="account_password" required>
             </label>
-            <p class="p-text">Passwords must be minimum of 12
+            <p class="i-text">Passwords must be minimum of 12
                 characters and include 1 capital letter,
                 1 number and 1 special character.</p>
         </fieldset>
