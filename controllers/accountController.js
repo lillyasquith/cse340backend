@@ -155,7 +155,7 @@ async function UpdateEditAccount (req, res) {
     account_lastname,
     account_email
   } = req.body
-  const updateEditResult = await accountModel.getAccountByEmail(
+  const updateEditResult = await accountModel.getAccountByAccounId(
     parseInt(account_id),
     account_firstname,
     account_lastname,
@@ -188,7 +188,7 @@ async function UpdateEditPassword (req, res) {
     account_id,
     account_password
   } = req.body
-  const updateEditPassword = await accountModel.getAccountByEmail(
+  const updateEditPassword = await accountModel.getAccountByAccounId(
     parseInt(account_id),
     account_password
   )
