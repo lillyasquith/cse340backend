@@ -212,10 +212,14 @@ async function UpdateEditPassword (req, res) {
  * ************************** */
 async function accountLogout(req, res) {
 res. clearCookie("jwt")
+const nav = await utilities.getNav()
 delete res.locals.accountData;
-res.locals.checkLogin = undefined;
+res.locals.loggedin = undefined;
 req.flash("notice", "Logout successful.")
-res.redirect("/account");
+res.render("index", {
+  title: "Home",
+  nav
+});
 return;
 }
 
