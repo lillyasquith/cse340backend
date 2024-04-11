@@ -129,8 +129,8 @@ async function accountLogin(req, res) {
  * ************************** */
 async function BuildEditAccount (req, res) {
   let nav = await utilities.getNav()
-  const { account_email} = req.body
-  const data = await accountModel.getAccountByEmail(account_email)
+  const account_id = parseInt(req.params.account_id)
+  const data = await accountModel.getAccountById(account_id)
   const accountData = data[0]
   res.render("./account/edit-account", {
     title: "Edit Account",
@@ -213,7 +213,7 @@ async function UpdateEditPassword (req, res) {
 async function accountLogout(req, res) {
 res. clearCookie("jwt")
 delete res.locals.accountData;
-res.locals.checkLogin = 0;
+res.locals.checkLogin = undefined;
 req.flash("notice", "Logout successful.")
 res.redirect("/account");
 return;

@@ -42,7 +42,7 @@ async function getAccountByEmail (account_email) {
 }
 
 // A function to get account information based on the account_id.
-async function getAccountByAccounId (account_id) {
+async function getAccountById (account_id) {
   try {
     const result = await pool.query(
       'SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1',
@@ -97,7 +97,7 @@ module.exports = {
   registerAccount, 
   checkExistingEmail, 
   getAccountByEmail, 
-  getAccountByAccounId, 
+  getAccountById, 
   UpdateEditAccount,
   UpdateEditPassword};
 
