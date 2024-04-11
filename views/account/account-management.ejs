@@ -1,14 +1,6 @@
 <!-- displaying a flash message -->
 <%- messages() %>
 
-<% if (errors) { %>
-    <ul class="notice">
-        <% errors.array().forEach(error=> { %>
-        <li><%= error.msg %></li>
-        <% }) %>
-    </ul> 
-    <% } %>
-
 <div id="management-account">
     <h1><%- title %></h1>
     <h2>Welcome <%= locals.accountData.account_firstname %></h2> 

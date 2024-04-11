@@ -207,6 +207,17 @@ async function UpdateEditPassword (req, res) {
     })
   }
 }
+/* ***************************
+ *  Process Log out
+ * ************************** */
+async function accountLogout(req, res) {
+res. clearCookie("jwt")
+delete res.locals.accountData;
+res.locals.checkLogin = 0;
+req.flash("notice", "Logout successful.")
+res.redirect("/account");
+return;
+}
 
 module.exports = { 
   buildLogin, 
@@ -216,4 +227,6 @@ module.exports = {
   buildAccountManagement, 
   BuildEditAccount, 
   UpdateEditAccount, 
-  UpdateEditPassword};
+  UpdateEditPassword,
+  accountLogout
+};

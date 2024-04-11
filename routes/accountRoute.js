@@ -62,4 +62,7 @@ utilities.handleErrors(accountController.UpdateEditAccount));
 // regValidate.checkRegData, 
 // utilities.handleErrors(accountController.UpdateEditPasswordAccount));
 
+// To logout
+router.get("/logout", utilities.handleErrors(accountController.accountLogout))
+
 module.exports = router;
