@@ -111,19 +111,6 @@ validate.editRules = () => {
     .isEmail()
     .normalizeEmail() // refer to validator.js docs
     .withMessage("A valid email is required."),
-
-    // password is required and must be strong password
-    body("account_password")
-      .trim()
-      .notEmpty()
-      .isStrongPassword({
-        minLength: 12,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1,
-        minSymbols: 1,
-      })
-      .withMessage("Password does not meet requirements."),
   ]
 
 }
