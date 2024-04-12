@@ -32,6 +32,8 @@ async function buildRegister(req, res, next) {
 * *************************************** */
 async function buildAccountManagement(req, res, next) {
   let nav = await utilities.getNav()
+  let accountData = await accountModel.getAccountById(res.locals.accountData.account_id)
+  res.locals.accountData.account_firstname = accountData.account_firstname
   res.render("account/account-management", {
     title: "Account Management",
     nav,
@@ -137,11 +139,12 @@ async function BuildEditAccount (req, res) {
     title: "Edit Account",
     nav,
     errors: null,
-    account_id: accountData.account_id,
     account_firstname: accountData.account_firstname,
     account_lastname:accountData.account_lastname,
-    account_email:accountData.account_email
+    account_email:accountData.account_email,
+    account_id: accountData.account_id
   })
+
 }
 
 /* ***************************
@@ -150,16 +153,17 @@ async function BuildEditAccount (req, res) {
 async function UpdateEditAccount (req, res) {
   let nav = await utilities.getNav()
   const {
-    account_id,
     account_firstname,
     account_lastname,
-    account_email
+    account_email,
+    account_id
+
   } = req.body
   const updateEditResult = await accountModel.UpdateEditAccount(
-    parseInt(account_id),
     account_firstname,
     account_lastname,
-    account_email
+    account_email,
+    account_id
   )
 
   if (updateEditResult) {
@@ -171,10 +175,10 @@ async function UpdateEditAccount (req, res) {
     title: "Edit Account",
     nav,
     errors: null,
-    account_id,
     account_firstname,
     account_lastname,
-    account_email
+    account_email,
+    account_id
     })
   }
 }
@@ -185,12 +189,28 @@ async function UpdateEditAccount (req, res) {
 async function UpdateEditPassword (req, res) {
   let nav = await utilities.getNav()
   const {
-    account_id,
-    account_password
+    account_password,
+    account_id
+
   } = req.body
+
+  // Hash the password before storing
+  let hashedPassword
+  try {
+    // regular password and cost (salt is generated automatically)
+    hashedPassword = await bcrypt.hashSync(account_password, 10)
+  } catch (error) {
+    req.flash("notice", "Sorry, there was an error processing the registration.")
+    res.status(500).render("account/register", {
+      title: "Registration",
+      nav,
+      errors: null,
+    })
+  }
+
   const updateEditPassword = await accountModel.UpdateEditPassword(
-    parseInt(account_id),
-    account_password
+    hashedPassword,
+    account_id
   )
 
   if (updateEditPassword) {
@@ -202,8 +222,8 @@ async function UpdateEditPassword (req, res) {
     title: "Edit Account",
     nav,
     errors: null,
-    account_id,
-    account_password
+    account_password,
+    account_id
     })
   }
 }
