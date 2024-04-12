@@ -48,7 +48,7 @@ nav ul li{
     list-style-type: none;
     width: 100%;
 	padding: 1rem 1vw;
-	font-family: var(--heading-font);
+	font-family: var(--paragrap-font);
 }
 
 nav ul li:hover {
@@ -277,6 +277,7 @@ form fieldset {
 .p-text {
 	margin-top: 10px;
 	font-size: 1rem;
+	color: aliceblue;
 }
 .required-text {
 	font-style: italic;
@@ -316,4 +317,8 @@ form fieldset {
 #inventoryDisplay, th, td {
 	padding: 10px;
 	border: 1px solid rgba(39, 34, 34, 0.748);
+}
+
+#edit-password h1{
+ margin-top: 20px;
 }

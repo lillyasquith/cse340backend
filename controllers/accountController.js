@@ -128,10 +128,11 @@ async function accountLogin(req, res) {
  *  Build Edit Account view
  * ************************** */
 async function BuildEditAccount (req, res) {
+  //console.log(`line 131 ${req.body}`)
   let nav = await utilities.getNav()
   const account_id = parseInt(req.params.account_id)
   const data = await accountModel.getAccountById(account_id)
-  const accountData = data[0]
+  const accountData = data
   res.render("./account/edit-account", {
     title: "Edit Account",
     nav,
@@ -155,7 +156,7 @@ async function UpdateEditAccount (req, res) {
     account_lastname,
     account_email
   } = req.body
-  const updateEditResult = await accountModel.getAccountByAccounId(
+  const updateEditResult = await accountModel.getAccountById(
     parseInt(account_id),
     account_firstname,
     account_lastname,
@@ -188,7 +189,7 @@ async function UpdateEditPassword (req, res) {
     account_id,
     account_password
   } = req.body
-  const updateEditPassword = await accountModel.getAccountByAccounId(
+  const updateEditPassword = await accountModel.getAccountById(
     parseInt(account_id),
     account_password
   )
