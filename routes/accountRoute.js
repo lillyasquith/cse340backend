@@ -52,13 +52,13 @@ utilities.handleErrors(accountController.BuildEditAccount));
 //Process edit to update 1st form
 router.post("/edit-account", 
 regValidate.editRules(), 
-regValidate.checkRegData, 
+regValidate.checkEditAccountData, 
 utilities.handleErrors(accountController.UpdateEditAccount));
 
 //Process edit to update 2st form
 router.post("/", 
 regValidate.updatePasswordRules(),
-regValidate.checkRegData, 
+regValidate.checkPasswordUpdate, 
 utilities.handleErrors(accountController.UpdateEditPassword));
 
 // To logout

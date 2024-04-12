@@ -140,8 +140,7 @@ async function BuildEditAccount (req, res) {
     account_id: accountData.account_id,
     account_firstname: accountData.account_firstname,
     account_lastname:accountData.account_lastname,
-    account_email:accountData.account_email,
-    account_password:accountData.account_password
+    account_email:accountData.account_email
   })
 }
 
