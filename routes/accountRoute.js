@@ -53,14 +53,13 @@ utilities.handleErrors(accountController.BuildEditAccount));
 router.post("/edit-account", 
 regValidate.editRules(), 
 regValidate.checkRegData, 
-utilities.handleErrors(accountController.UpdateEditPassword),
 utilities.handleErrors(accountController.UpdateEditAccount));
 
-// //Process edit to update 2st form
-// router.post("/", 
-// regValidate.editRules(), 
-// regValidate.checkRegData, 
-// utilities.handleErrors(accountController.UpdateEditPasswordAccount));
+//Process edit to update 2st form
+router.post("/", 
+regValidate.updatePasswordRules(),
+regValidate.checkRegData, 
+utilities.handleErrors(accountController.UpdateEditPassword));
 
 // To logout
 router.get("/logout", utilities.handleErrors(accountController.accountLogout))

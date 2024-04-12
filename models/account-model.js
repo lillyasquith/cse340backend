@@ -55,19 +55,19 @@ async function getAccountById (account_id) {
 // A function to handle the update of the account information as submitted to the controller from the account update form. It will only need to update the firstname, 
 // lastname and email values based on the account_id.
 async function UpdateEditAccount(
-  account_id, 
   account_firstname, 
   account_lastname, 
-  account_email
+  account_email,
+  account_id
 ) {
   try {
     const sql =
       "UPDATE public.account SET account_firstname = $1, account_lastname = $2, account_email = $3, WHERE account_id= $4 RETURNING *"
     const data = await pool.query(sql, [
-      account_id, 
       account_firstname, 
       account_lastname, 
-      account_email
+      account_email,
+      account_id
     ])
     return data.rows[0]
   } catch (error) {

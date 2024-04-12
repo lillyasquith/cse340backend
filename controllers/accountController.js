@@ -156,7 +156,7 @@ async function UpdateEditAccount (req, res) {
     account_lastname,
     account_email
   } = req.body
-  const updateEditResult = await accountModel.getAccountById(
+  const updateEditResult = await accountModel.UpdateEditAccount(
     parseInt(account_id),
     account_firstname,
     account_lastname,
@@ -164,7 +164,7 @@ async function UpdateEditAccount (req, res) {
   )
 
   if (updateEditResult) {
-    req.flash("notice", "Congratulations, your information has been updated.")
+    req.flash("notice", "Congratulations, your account information has been updated.")
     res.redirect("/account/")
   } else {
     req.flash("notice", "Sorry, the insert failed.")
@@ -189,13 +189,13 @@ async function UpdateEditPassword (req, res) {
     account_id,
     account_password
   } = req.body
-  const updateEditPassword = await accountModel.getAccountById(
+  const updateEditPassword = await accountModel.UpdateEditPassword(
     parseInt(account_id),
     account_password
   )
 
   if (updateEditPassword) {
-    req.flash("notice", "Congratulations, your information has been updated.")
+    req.flash("notice", "Congratulations, your new password has been updated.")
     res.redirect("/account/")
   } else {
     req.flash("notice", "Sorry, the insert failed.")
