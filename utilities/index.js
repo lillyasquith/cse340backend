@@ -158,15 +158,15 @@ Util.checkLogin = (req, res, next) => {
 }
 
 // middleware that makes use of the JWT token and checks the account type
-Util.checkManagement = (req,res, next) => {
-  if (locals.accountData.account_type == "Admin" || locals.accountData.account_type == "Employee") {
-  next()
-
+Util.checkManagement = (req, res, next) => {
+  if (req.locals.accountData && (req.locals.accountData.account_type === "Admin" || req.locals.accountData.account_type === "Employee")) {
+    next();
   } else {
-    req.flash("notice", "Please log in.")
-    return res.redirect("/account/login")
+    req.flash("notice", "Please log in.");
+    res.redirect("/account/login");
   }
-}
+};
+
 
 
 module.exports = Util;

@@ -71,7 +71,6 @@ invCont.registerNewClassification = async (req, res) =>{
   let nav = await utilities.getNav()
   const classificationSelect = await utilities.buildClassificationList()
   const {classification_name} = req.body
-  
   const regResult = await invModel.registerNewClassification(classification_name)
   if (regResult) {
     req.flash(
@@ -122,7 +121,6 @@ invCont.registerNewVehicle = async (req, res) => {
   const classificationSelect = await utilities.buildClassificationList(data.inv_id)
   // const classificationSelect = await utilities.buildClassificationList()
   const {classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
-
   const regResult = await invModel.registerNewVehicle(
     classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color
   )

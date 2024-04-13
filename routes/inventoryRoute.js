@@ -16,7 +16,6 @@ router.get("/", utilities.handleErrors(invController.BuildManagementPage));
 
 //Get inventory for AJAX Route, select inv item activity for classification List
 router.get("/getInventory/:classification_id", 
-utilities.checkManagement,
 utilities.handleErrors(invController.getInventoryJSON))
 
 // Route to add classification view
