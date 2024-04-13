@@ -34,6 +34,22 @@ async function buildAccountManagement(req, res, next) {
   let nav = await utilities.getNav()
   let accountData = await accountModel.getAccountById(res.locals.accountData.account_id)
   res.locals.accountData.account_firstname = accountData.account_firstname
+  let accountType = await utilities.checkManagement()
+  const classificationSelect = await utilities.buildClassificationList()
+  if (!accountType) {
+    res.render("/account/account-management", {
+      title: "Account Management",
+      nav,
+      errors:null,
+    })
+    res.render ("./inventory/vehicle-management", {
+      title: "Vehicle Management",
+      nav,
+      classificationSelect,
+      errors: null
+    })
+  }
+  else
   res.render("account/account-management", {
     title: "Account Management",
     nav,
